@@ -1,22 +1,23 @@
+import { Product } from "./Product.js";
 import { Shop } from "./Shop.js";
 import { Cart } from "./Cart.js";
 
 const shop = new Shop();
-const product1 = {
+const product1 = new Product({
   id: 1,
   name: "Klawiatura",
   price: 123,
-};
-const product2 = {
+});
+const product2 = new Product({
   id: 2,
   name: "Myszka",
   price: 12,
-};
-const product3 = {
+});
+const product3 = new Product({
   id: 3,
   name: "Monitor",
   price: 678,
-};
+});
 
 shop.addProduct(product1);
 shop.addProduct(product2);
