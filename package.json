@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "now": "node src/now.js"
+    "now": "node src/now.js",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
   "description": "",
   "dependencies": {
     "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }
