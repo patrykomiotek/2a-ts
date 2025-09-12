@@ -1,7 +1,9 @@
-export class Cart {
-  products = [];
+import { ProductType } from "./Product";
 
-  addProduct(product) {
+export class Cart {
+  products: ProductType[] = [];
+
+  addProduct(product: ProductType) {
     this.products.push(product);
   }
 
@@ -19,7 +21,7 @@ export class Cart {
     );
   }
 
-  removeProduct(id) {
+  removeProduct(id: number) {
     console.log({ id });
     this.products = this.products.filter((product) => {
       // this.products.filter

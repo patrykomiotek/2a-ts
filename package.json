@@ -6,14 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "now": "node src/now.js",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "start-node": "node ./dist/run.js",
+    "start": "tsx ./src/run.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "tsx": "^4.20.5"
   },
   "devDependencies": {
     "typescript": "^5.9.2"

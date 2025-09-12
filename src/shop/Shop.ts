@@ -1,7 +1,9 @@
-export class Shop {
-  products = [];
+import { ProductType } from "./Product";
 
-  addProduct(product) {
+export class Shop {
+  products: ProductType[] = [];
+
+  addProduct(product: ProductType) {
     this.products.push(product);
   }
 
