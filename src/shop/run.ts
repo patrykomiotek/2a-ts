@@ -8,17 +8,20 @@ const product1 = new Product({
   id: 1,
   name: "Klawiatura",
   price: 123,
+  status: "in-stock",
 });
 
 const product2 = new Product({
   id: 2,
   name: "Myszka",
   price: 12,
+  status: "sold",
 });
 const product3 = new Product({
   id: 3,
   name: "Monitor",
   price: 678,
+  status: "unavailable",
 });
 
 shop.addProduct(product1);
@@ -28,6 +31,7 @@ shop.addProduct({
   id: 123,
   name: "Test",
   price: 56,
+  status: "sold", // ProductStatus.SOLD
   description: "Lorem ipsum",
 });
 shop.listProducts();
