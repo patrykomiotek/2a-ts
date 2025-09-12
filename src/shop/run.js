@@ -3,20 +3,30 @@ import { Shop } from "./Shop.js";
 import { Cart } from "./Cart.js";
 
 const shop = new Shop();
+
 const product1 = new Product({
   id: 1,
   name: "Klawiatura",
   price: 123,
-});
+})
+  .then((product) => {
+    console.log(product);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 const product2 = new Product({
   id: 2,
   name: "Myszka",
   price: 12,
 });
 const product3 = new Product({
-  id: 3,
-  name: "Monitor",
-  price: 678,
+  // id: 3,
+  // name: "Monitor",
+  sdhdskjhfkhj: 123,
+  dshkldsfhdfs: "sdfsdfsd",
+  // price: 678,
 });
 
 shop.addProduct(product1);
