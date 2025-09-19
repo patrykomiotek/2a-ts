@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   console.log("Hello");
 
   const url = "https://rickandmortyapi.com/api/character";
@@ -6,33 +6,57 @@ window.addEventListener("DOMContentLoaded", () => {
   // fetch
   // const response = fetch(url); // Promise: pending, fulfilled, rejected
 
-  fetch(url)
-    .then((response) => {
-      console.log(
-        `Status: ${response.status}, status text: ${response.statusText}`
-      );
-      console.log({ response });
+  // fetch(url)
+  //   .then((response) => {
+  //     console.log(
+  //       `Status: ${response.status}, status text: ${response.statusText}`
+  //     );
+  //     console.log({ response });
 
-      return response.json(); // Promise
-    })
-    .then((data) => {
-      console.log(data); //
+  //     return response.json(); // Promise
+  //   })
+  //   .then((data) => {
+  //     console.log(data); //
 
-      const root = document.getElementById("root");
-      const characters = data.results;
-      characters.forEach((element) => {
-        const characterHtml = document.createElement("div");
-        characterHtml.innerHTML = `<h2>${element.name}</h2><div><img src="${element.image}" /></div>`;
-        root.appendChild(characterHtml);
-      });
-    })
-    .catch((error) => {
-      console.error({ error });
-    })
-    .finally(() => {
-      const loadingHtml = document.getElementById("loading");
-      loadingHtml.textContent = "";
+  //     const root = document.getElementById("root");
+  //     const characters = data.results;
+  //     characters.forEach((element) => {
+  //       const characterHtml = document.createElement("div");
+  //       characterHtml.innerHTML = `<h2>${element.name}</h2><div><img src="${element.image}" /></div>`;
+  //       root.appendChild(characterHtml);
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.error({ error });
+  //   })
+  //   .finally(() => {
+  //     const loadingHtml = document.getElementById("loading");
+  //     loadingHtml.textContent = "";
+  //   });
+
+  try {
+    const response = await fetch(url);
+
+    console.log(
+      `Status: ${response.status}, status text: ${response.statusText}`
+    );
+    console.log({ response });
+
+    const data = await response.json();
+
+    console.log(data); //
+
+    const root = document.getElementById("root");
+    const characters = data.results;
+    characters.forEach((element) => {
+      const characterHtml = document.createElement("div");
+      characterHtml.innerHTML = `<h2>${element.name}</h2><div><img src="${element.image}" /></div>`;
+      root.appendChild(characterHtml);
     });
-
-  // console.log({ response });
+  } catch (error) {
+    console.error(error);
+  } finally {
+    const loadingHtml = document.getElementById("loading");
+    loadingHtml.textContent = "";
+  }
 });
