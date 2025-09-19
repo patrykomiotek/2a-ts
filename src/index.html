@@ -7,6 +7,23 @@
 </head>
 <body>
 
+  <form>
+    <div>
+      <label for="id">Name</label>
+      <input id="name" type="text" name="name" placeholder="Character name" />
+    </div>
+    <div>
+      <label for="status">status</label>
+      <select id="status" name="status">
+        <option value="">--- choose status ---</option>
+        <option value="alive">Alive</option>
+        <option value="dead">Dead</option>
+      </select>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+
+
   <div id="loading">Loading...</div>
   <div id="root"></div>
 
