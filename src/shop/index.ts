@@ -1,4 +1,4 @@
 // barrels
-export { Cart } from "./Cart";
-export { Shop } from "./Shop";
-export { Product } from "./Product";
+export { Cart } from "./Cart.js";
+export { Shop } from "./Shop.js";
+export { Product } from "./Product.js";

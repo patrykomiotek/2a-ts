@@ -1,1 +1,0 @@
-// let someNumber: number = "tekst";
