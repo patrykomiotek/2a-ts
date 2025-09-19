@@ -60,3 +60,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     loadingHtml.textContent = "";
   }
 });
+
+const form = document.getElementById("main-form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const nameValue = document.getElementById("name").value;
+  const statusValue = document.getElementById("status").value;
+
+  console.log({ nameValue, statusValue });
+});
