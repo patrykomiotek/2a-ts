@@ -8,7 +8,8 @@
     "now": "node src/now.js",
     "tsc": "tsc",
     "start-node": "node ./dist/run.js",
-    "start": "tsx ./src/shop/run.ts"
+    "start": "tsx ./src/shop/run.ts",
+    "server": "tsx ./src/server.ts"
   },
   "keywords": [],
   "author": "",
