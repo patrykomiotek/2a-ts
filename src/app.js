@@ -17,9 +17,21 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .then((data) => {
       console.log(data); //
+
+      const root = document.getElementById("root");
+      const characters = data.results;
+      characters.forEach((element) => {
+        const characterHtml = document.createElement("div");
+        characterHtml.innerHTML = `<h2>${element.name}</h2><div><img src="${element.image}" /></div>`;
+        root.appendChild(characterHtml);
+      });
     })
     .catch((error) => {
       console.error({ error });
+    })
+    .finally(() => {
+      const loadingHtml = document.getElementById("loading");
+      loadingHtml.textContent = "";
     });
 
   // console.log({ response });
