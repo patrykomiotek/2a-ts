@@ -8,11 +8,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   fetch(url)
     .then((response) => {
+      console.log(
+        `Status: ${response.status}, status text: ${response.statusText}`
+      );
       console.log({ response });
+
+      return response.json(); // Promise
+    })
+    .then((data) => {
+      console.log(data); //
     })
     .catch((error) => {
       console.error({ error });
     });
 
-  console.log({ response });
+  // console.log({ response });
 });
